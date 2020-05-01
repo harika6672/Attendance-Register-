@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>Serial No.</th>
+                    <th>NAME</th>
+                    <th>BRAND</th>
+                    <th>QUANTITY</th>
+                    <th>PACKET RATE</th>
+                    <th>DAY 1</th>
+                    <th>DAY 2</th>
+                    <th>DAY 3</th>
+                    <th>DAY 4</th>
+                    <th>DAY 5</th>
+                    <th>DAY 6</th>
+                    <th>DAY 7</th>
+                    <th>DAY 8</th>
+                    <th>DAY 9</th>
+                    <th>DAY 10</th>
+                    <th>DAY 11</th>
+                    <th>DAY 12</th>
+                    <th>DAY 13</th>
+                    <th>DAY 14</th>
+                    <th>DAY 15</th>
+                    <th>DAY 16</th>
+                    <th>DAY 17</th>
+                    <th>DAY 18</th>
+                    <th>DAY 19</th>
+                    <th>DAY 20</th>
+                    <th>DAY 21</th>
+                    <th>DAY 22</th>
+                    <th>DAY 23</th>
+                    <th>DAY 24</th>
+                    <th>DAY 25</th>
+                    <th>DAY 26</th>
+                    <th>DAY 27</th>
+                    <th>DAY 28</th>
+                    <th>DAY 29</th>
+                    <th>DAY 30</th>
+                    <th>DAY 31</th>
+                    <th>TOTAL</th>
+                    <th>MILK CONSUMED</th>
+                    <th>STATUS</th>
+                    <th>EXTRA OR DUE</th>
+                    <th>SAVE/UPDATE</th>
+                    <th>INFO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i=index;let d of data|slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.brand}}</td>
+                    <td>{{d.quantity}}</td>
+                    <td>{{d.packetrate}}</td>
+                    <td *ngFor="let k of keys" ><input type='text' value="{{d.days[k]}}" [(ngModel)]="d.days[k]"></td>
+                    <td>{{d.total}}</td>
+                    <td>{{d.milkconsumed}}</td>
+                    <td>{{d.status}}</td>
+                    <td>{{d.dueorextra}}</td>
+                    <td><button (click)="updatecustomerdata(i)">Update</button></td>
+                    <td><button (click)="info(i)">Info</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <ngb-pagination [collectionSize]="data.length" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+    </div> 
+</div>

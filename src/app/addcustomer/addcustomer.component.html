@@ -1,0 +1,41 @@
+<div class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(250,225,225,0.6) 0%,rgba(255,255,255,0.9) 100%), url(https://image.shutterstock.com/image-photo/milk-jug-pouring-into-glass-260nw-657561061.jpg)">
+    <div class="container h-100">
+        <div class="row justify-content-center">
+            <h1>Add Customer</h1>
+        </div>
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <form class="shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="form-group  align-center">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" name="fname" [(ngModel)]="obj.name">
+                    </div>
+                    <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <select class="form-control" id="quantity" name="fquantity" [(ngModel)]="obj.brand"  placeholder="Enter Quantity">
+                        <option value="Heitage">Heritage</option>
+                        <option value="Vijaya">Vijaya</option>
+                        <option value="Amul">Amul</option>
+                        <option value="Vishaka">Vishaka</option>
+                        <option value="Tirumula">Tirumula</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" class="form-control" id="brand" placeholder="Enter Quantity" name="fbrand" [(ngModel)]="obj.quantity">
+                    </div>
+                    <div class="form-group">
+                    <label for="packetrate">Packet Rate</label>
+                    <input type="text" class="form-control" id="packetrate" name="frate" [(ngModel)]="obj.rate" placeholder="Enter Packet Rate">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" (click)="submitdata()">Add Customer</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" (click)="listofcustomers()">Attendence Sheet</button>
+                    </div>
+                </form> 
+             </div>
+        </div>
+    </div>
+</div>
